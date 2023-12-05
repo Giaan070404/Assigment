@@ -265,7 +265,6 @@ where department_id = 2;
 select * from Account 
 where user_name like 'H%' or user_name like '%a'; 
 -- Xóa tất cả các exam được tạo trước ngày 20/12/2019
--- e đang bị lỗi ở đây nhỉ
 delete from Exam                                                                  
 where created_date < '2019-12-20';    
 -- Xóa tất cả các question có nội dung bắt đầu bằng từ "câu hỏi"
