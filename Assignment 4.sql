@@ -358,12 +358,10 @@ select id, name
 from `Group`
 where id = 1;
 -- b) Lấy các account thuộc nhóm thứ 2
-select id, group_id
-from Account
+select id, group_id from Account
 where group_id = 2
 union
-select id, name
-from `Group`
+select id, name from `Group`
 where id = 2;
 -- c) Ghép 2 kết quả từ câu a) và câu b) sao cho không có record nào trùng nhau
 select id, group_id from Account
@@ -371,7 +369,6 @@ union
 select id, name from `Group`;
 -- Question 18:
 -- a) Lấy các group có lớn hơn 5 thành viên
--- Câu truy vấn lấy các dòng từ bảng employees với phòng ban lớn hơn 2
 SELECT * FROM `Group` WHERE creator_id > 2;
 -- b) Lấy các group có nhỏ hơn 7 thành viên
 SELECT * FROM `Group` WHERE creator_id < 7;
