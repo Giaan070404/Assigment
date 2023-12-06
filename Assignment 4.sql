@@ -193,13 +193,10 @@ VALUES ('staff01', 'Axx Bxx Cxx', 'staff01@gmail.com', 'Male', 1, 1, CURDATE(), 
 ('staff03', 'Le Bxx Cxx', 'staff03@email.com', 'Female', 3, 1, NULL, 14000),
 ('staff04', 'Le Bxx Cxx', 'staff04@gmail.com', 'Male', 3, 2, '2022-07-09', 15000);
 
--- Insert vào bảng `QuestionType`
 INSERT INTO QuestionType(type) VALUES ('Multiple Choice'), ('True/False'), ('Short Answer');
 
--- Insert vào bảng `Category`
 INSERT INTO Category(category) VALUES ('Programming'), ('Marketing'), ('Finance'), ('HR'), ('Design Web');
 
--- Insert vào bảng `Question`
 INSERT INTO Question(content, category_id, type_id, creator_id, created_date)
 VALUES
 ('What is a variable?', 1, 1, 1, CURDATE()),
@@ -213,7 +210,6 @@ VALUES
 ('Discuss the importance of HR training programs.', 4, 2, 9, CURDATE()),
 ('What are the key principles of web design?', 5, 1, 10, CURDATE());
 
--- Insert vào bảng `Answer`
 INSERT INTO Answer(content, question_id, created_date)
 VALUES
 ('A variable is a container for storing data.', 1, CURDATE()),
@@ -228,7 +224,6 @@ VALUES
 ('HR training', 9, CURDATE()),
 ('', 10, CURDATE());
 
--- Insert vào bảng `Exam`
 INSERT INTO Exam(code, title, duration, category_id, creator, creator_id, created_date)
 VALUES
 ('A11', 'Programming Basics', 60, 1,'justin' ,1, CURDATE()),
@@ -237,7 +232,6 @@ VALUES
 ('A14', 'HR Management', 40, 4,'MTP', 4, CURDATE()),
 ('A15', 'Web Design Principles', 240, 5,'Taylor', 5, '2019-10-12');
 
--- Insert vào bảng `ExamQuestion`
 INSERT INTO ExamQuestion(exam_id, question_id)
 VALUES
 (1, 1),
