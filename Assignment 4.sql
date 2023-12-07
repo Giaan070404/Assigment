@@ -350,25 +350,24 @@ where a.id is null;
 -- Exercise 2: Union
 -- Question 17:
 -- a) Lấy các account thuộc nhóm thứ 1
-select id, group_id
-from Account
-where group_id = 1
-union
-select id, name
-from `Group`
-where id = 1;
+select * from Account a
+inner join GroupMember g on a.id = g.account_id
+where g.group_id = 1;
 -- b) Lấy các account thuộc nhóm thứ 2
-select id, group_id from Account
-where group_id = 2
-union
-select id, name from `Group`
-where id = 2;
+select * from Account a
+inner join GroupMember g on a.id = g.account_id
+where g.group_id = 2;
 -- c) Ghép 2 kết quả từ câu a) và câu b) sao cho không có record nào trùng nhau
-select id, group_id from Account
+select a.id, a.user_name, a.full_name, a.email, a.salary, a.gender, a.group_id from Account as a
+inner join GroupMember as g on a.id = g.account_id
+where g.group_id = 1
 union
-select id, name from `Group`;
+select a.id, a.user_name, a.full_name, a.email, a.salary, a.gender, a.group_id from Account as a
+inner join GroupMember as g on a.id = g.account_id
+where g.group_id = 2;
 -- Question 18:
 -- a) Lấy các group có lớn hơn 5 thành viên
+-- Câu truy vấn lấy các dòng từ bảng employees với phòng ban lớn hơn 2
 SELECT * FROM `Group` WHERE creator_id > 2;
 -- b) Lấy các group có nhỏ hơn 7 thành viên
 SELECT * FROM `Group` WHERE creator_id < 7;
